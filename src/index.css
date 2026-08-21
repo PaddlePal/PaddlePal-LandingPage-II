@@ -114,6 +114,30 @@ body {
     linear-gradient(to bottom, #fff 38%, #f5f6f6 100%);
 }
 
+/* ---- Features section --------------------------------------------------- */
+
+.features-wash {
+  background:
+    radial-gradient(44% 36% at 88% 4%, rgba(2, 101, 197, 0.07), transparent 70%),
+    radial-gradient(40% 34% at 4% 94%, rgba(22, 160, 165, 0.06), transparent 72%),
+    linear-gradient(to bottom, #f5f6f6 0%, #fbfbfb 46%, #f3f5f4 100%);
+}
+
+/* Scroll-triggered counterpart to `.rise` — driven by data-visible from
+   useInView, so below-the-fold content animates when it is reached. */
+.reveal {
+  opacity: 0;
+  transform: translate3d(0, 22px, 0);
+  transition:
+    opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal[data-visible='true'] {
+  opacity: 1;
+  transform: none;
+}
+
 @keyframes rise {
   from {
     opacity: 0;
@@ -152,5 +176,11 @@ body {
     animation: none;
     opacity: 1;
     transform: none;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }
