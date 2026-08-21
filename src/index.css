@@ -1,0 +1,153 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  /* Ink — a near-black carrying a hint of the logo's deep green */
+  --color-ink: #0b1210;
+  --color-ink-soft: #55605c;
+  --color-ink-faint: #6e7873;
+
+  /* Brand, sampled from the logo and the paddle itself */
+  --color-brand: #0f4a36;
+  --color-teal: #16a0a5;
+  --color-lime: #d2e85a;
+  --color-paddle: #0265c5;
+
+  --color-hairline: #e7e9e8;
+}
+
+* {
+  border-color: var(--color-hairline);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #fff;
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* ---- Hero backdrop ------------------------------------------------------ */
+
+/* Faint vertical hairlines running the height of the stage. The white light
+   cone below sits on top of these and washes them out, which is what sells
+   the "beam" effect. */
+.stage-lines {
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgba(11, 18, 16, 0.085) 0 1px,
+    transparent 1px 84px
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    #000 18%,
+    #000 74%,
+    transparent 97%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    #000 18%,
+    #000 74%,
+    transparent 97%
+  );
+}
+
+/* The light cone flaring up and out from behind the paddle. It paints white
+   over the hairlines, so the lines only survive outside the cone. */
+.stage-beam {
+  background: conic-gradient(
+    from -52deg at 50% 94%,
+    transparent 0deg,
+    rgba(255, 255, 255, 0.4) 10deg,
+    #fff 30deg,
+    #fff 74deg,
+    rgba(255, 255, 255, 0.4) 94deg,
+    transparent 104deg
+  );
+  -webkit-mask-image: radial-gradient(
+    102% 108% at 50% 94%,
+    #000 10%,
+    #000 55%,
+    rgba(0, 0, 0, 0.6) 78%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    102% 108% at 50% 94%,
+    #000 10%,
+    #000 55%,
+    rgba(0, 0, 0, 0.6) 78%,
+    transparent 100%
+  );
+}
+
+/* A soft halo right behind the paddle head so it separates from the sweep. */
+.stage-glow {
+  background: radial-gradient(
+    42% 30% at 50% 78%,
+    rgba(255, 255, 255, 0.95),
+    rgba(255, 255, 255, 0) 72%
+  );
+}
+
+/* Studio sweep: the floor darkens very slightly toward the bottom corners. */
+.stage-sweep {
+  background:
+    radial-gradient(
+      68% 42% at 50% 106%,
+      rgba(11, 18, 16, 0.1),
+      transparent 74%
+    ),
+    linear-gradient(to bottom, #fff 38%, #f5f6f6 100%);
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes rise-paddle {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 46px, 0) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+.rise {
+  opacity: 0;
+  animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.rise-paddle {
+  opacity: 0;
+  animation: rise-paddle 1.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise,
+  .rise-paddle {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}

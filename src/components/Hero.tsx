@@ -1,0 +1,125 @@
+import paddle from '../assets/paddle-cutout.webp'
+import Navbar from './Navbar'
+
+const specs = [
+  ['1 kHz', 'sampling'],
+  ['<20 ms', 'to phone'],
+  ['iOS', 'connect app'],
+]
+
+export default function Hero() {
+  return (
+    <section
+      id="home"
+      className="stage-sweep relative isolate flex min-h-svh flex-col overflow-hidden"
+    >
+      {/* --- backdrop ---------------------------------------------------- */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+        <div className="stage-lines absolute inset-0" />
+        <div className="stage-beam absolute inset-0" />
+        <div className="stage-glow absolute inset-0" />
+      </div>
+
+      <Navbar />
+
+      <div className="relative z-20 flex min-h-0 flex-1 flex-col items-center px-6 pt-[max(5.5rem,12svh)] text-center sm:px-10">
+        {/* --- copy ------------------------------------------------------ */}
+        <h1
+          className="rise font-display text-[clamp(3.25rem,11vw,8.5rem)] leading-[0.88] tracking-[-0.045em] text-ink"
+          style={{ animationDelay: '80ms' }}
+        >
+          <span className="font-extralight">Paddle</span>
+          <span className="font-extrabold">Pal</span>
+        </h1>
+
+        <p
+          className="rise mt-4 font-display text-[clamp(1.05rem,2.4vw,1.75rem)] leading-tight font-medium tracking-[-0.03em] text-ink-soft"
+          style={{ animationDelay: '200ms' }}
+        >
+          Smart Pickleball Analytics
+        </p>
+
+        <p
+          className="rise mt-3 max-w-[40ch] text-[13px] leading-relaxed text-ink-faint"
+          style={{ animationDelay: '300ms' }}
+        >
+          Every swing, spin and impact — measured on the paddle, streamed to
+          your phone in real time.
+        </p>
+
+
+        {/* --- the paddle, taking whatever height is left ---------------- */}
+        <div className="relative mt-6 min-h-[200px] w-full flex-1">
+          <figure
+            className="rise-paddle absolute bottom-[-13svh] left-1/2 aspect-[682/1432] h-[calc(100%+13svh)] max-h-[820px] -translate-x-1/2"
+            style={{ animationDelay: '180ms' }}
+          >
+            <img
+              src={paddle}
+              alt="The PaddlePal smart pickleball paddle, with its sensor module mounted at the throat"
+              width={682}
+              height={1432}
+              className="h-full w-full object-contain drop-shadow-[0_34px_55px_rgba(11,18,16,0.17)]"
+            />
+
+            {/* Callouts anchored to the real hardware in the photo */}
+            <figcaption
+              className="rise absolute top-[69%] right-[60%] hidden items-center gap-3 whitespace-nowrap md:flex"
+              style={{ animationDelay: '900ms' }}
+            >
+              <span className="text-right">
+                <span className="block font-display text-[13px] font-bold tracking-[-0.01em] text-ink">
+                  Movement sensor
+                </span>
+                <span className="block text-[11px] text-ink-faint">
+                  6-axis IMU
+                </span>
+              </span>
+              <span className="flex items-center">
+                <span className="h-px w-12 bg-ink/20 lg:w-16" />
+                <span className="size-1.5 rounded-full bg-paddle" />
+              </span>
+            </figcaption>
+
+            <figcaption
+              className="rise absolute top-[24%] left-[95%] hidden items-center gap-3 whitespace-nowrap md:flex"
+              style={{ animationDelay: '1000ms' }}
+            >
+              <span className="flex items-center">
+                <span className="size-1.5 rounded-full bg-paddle" />
+                <span className="h-px w-12 bg-ink/20 lg:w-16" />
+              </span>
+              <span>
+                <span className="block font-display text-[13px] font-bold tracking-[-0.01em] text-ink">
+                  Shot sensor
+                </span>
+                <span className="block text-[11px] text-ink-faint">
+                  FSR matrix
+                </span>
+              </span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
+      {/* --- bottom rail ------------------------------------------------- */}
+      <div className="pointer-events-none relative z-30 mx-auto flex w-full max-w-[1440px] items-end justify-between px-6 pb-6 sm:px-10">
+        <dl
+          className="rise hidden items-center gap-6 sm:flex"
+          style={{ animationDelay: '650ms' }}
+        >
+          {specs.map(([value, label]) => (
+            <div key={label} className="text-right leading-tight">
+              <dt className="font-display text-sm font-bold tracking-[-0.02em] text-ink">
+                {value}
+              </dt>
+              <dd className="text-[11px] tracking-[0.08em] text-ink-faint uppercase">
+                {label}
+              </dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+    </section>
+  )
+}
