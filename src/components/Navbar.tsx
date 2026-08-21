@@ -16,10 +16,10 @@ export default function Navbar() {
     <header className="absolute inset-x-0 top-0 z-40">
       <nav
         aria-label="Primary"
-        className="mx-auto flex max-w-[1440px] items-center justify-between gap-6 px-6 py-5 sm:px-10"
+        className="mx-auto grid max-w-[1440px] grid-cols-[1fr_auto_1fr] items-center gap-6 px-6 py-5 sm:px-10"
       >
         {/* Wordmark */}
-        <a href="#home" className="flex shrink-0 items-center gap-2.5">
+        <a href="#home" className="flex shrink-0 items-center gap-2.5 justify-self-start col-start-1">
           <img
             src={logo}
             alt=""
@@ -34,7 +34,7 @@ export default function Navbar() {
         </a>
 
         {/* Centre pill */}
-        <ul className="hidden items-center gap-1 rounded-full border border-hairline bg-white/80 p-1 shadow-[0_1px_2px_rgba(11,18,16,0.05),0_8px_24px_-12px_rgba(11,18,16,0.18)] backdrop-blur-md lg:flex">
+        <ul className="hidden items-center gap-1 justify-self-center col-start-2 rounded-full border border-hairline bg-white/80 p-1 shadow-[0_1px_2px_rgba(11,18,16,0.05),0_8px_24px_-12px_rgba(11,18,16,0.18)] backdrop-blur-md lg:flex">
           {links.map(({ label, href }, i) => (
             <li key={label}>
               <a
@@ -54,7 +54,7 @@ export default function Navbar() {
         </ul>
 
         {/* Status + contact */}
-        <div className="flex shrink-0 items-center gap-2 sm:gap-3">
+        <div className="flex shrink-0 items-center gap-2 justify-self-end col-start-3 sm:gap-3">
           <a
             href="#demo"
             className="hidden items-center rounded-full border border-hairline bg-white/80 px-4 py-2 text-[13px] font-medium text-ink shadow-[0_1px_2px_rgba(11,18,16,0.05)] backdrop-blur-md transition-[transform,border-color] duration-200 hover:-translate-y-px hover:border-ink/25 sm:inline-flex"

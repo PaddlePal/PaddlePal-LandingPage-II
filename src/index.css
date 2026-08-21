@@ -16,6 +16,9 @@
   --color-paddle: #0265c5;
 
   --color-hairline: #e7e9e8;
+
+  /* The oversized wordmark that sits in the backdrop behind the paddle */
+  --color-ghost: #dfe3e1;
 }
 
 * {

@@ -1,5 +1,5 @@
 import paddle from '../assets/paddle-cutout.webp'
-import Navbar from './Navbar'
+import Navbar from '../components/Navbar'
 
 const specs = [
   ['1 kHz', 'sampling'],
@@ -20,20 +20,22 @@ export default function Hero() {
         <div className="stage-glow absolute inset-0" />
       </div>
 
+      {/* --- the wordmark, part of the backdrop -------------------------- */}
+      <div className="pointer-events-none absolute inset-x-0 top-[28%] z-10 md:top-[48%] -translate-y-1/2 select-none">
+        <h1
+          className="rise text-center font-display text-[min(19vw,16.5rem)] leading-[0.82] font-semibold tracking-[-0.055em] text-ghost"
+          style={{ animationDelay: '80ms' }}
+        >
+          PaddlePal
+        </h1>
+      </div>
+
       <Navbar />
 
       <div className="relative z-20 flex min-h-0 flex-1 flex-col items-center px-6 pt-[max(5.5rem,12svh)] text-center sm:px-10">
         {/* --- copy ------------------------------------------------------ */}
-        <h1
-          className="rise font-display text-[clamp(3.25rem,11vw,8.5rem)] leading-[0.88] tracking-[-0.045em] text-ink"
-          style={{ animationDelay: '80ms' }}
-        >
-          <span className="font-extralight">Paddle</span>
-          <span className="font-extrabold">Pal</span>
-        </h1>
-
         <p
-          className="rise mt-4 font-display text-[clamp(1.05rem,2.4vw,1.75rem)] leading-tight font-medium tracking-[-0.03em] text-ink-soft"
+          className="rise font-display text-[clamp(1.05rem,2.4vw,1.75rem)] leading-tight font-medium tracking-[-0.03em] text-ink-soft"
           style={{ animationDelay: '200ms' }}
         >
           Smart Pickleball Analytics
