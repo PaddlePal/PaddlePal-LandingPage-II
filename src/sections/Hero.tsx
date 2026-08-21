@@ -2,9 +2,9 @@ import paddle from '../assets/paddle-cutout.webp'
 import Navbar from '../components/Navbar'
 
 const specs = [
-  ['1 kHz', 'sampling'],
-  ['<20 ms', 'to phone'],
-  ['iOS', 'connect app'],
+  ['BLE', 'Connect'],
+  ['iOS', 'Mobile App'],
+  ['Database', 'Session History'],
 ]
 
 export default function Hero() {
@@ -45,8 +45,7 @@ export default function Hero() {
           className="rise mt-3 max-w-[40ch] text-[13px] leading-relaxed text-ink-faint"
           style={{ animationDelay: '300ms' }}
         >
-          Every swing, spin and impact — measured on the paddle, streamed to
-          your phone in real time.
+          Every swing, shot and impact measured
         </p>
 
 
@@ -66,7 +65,7 @@ export default function Hero() {
 
             {/* Callouts anchored to the real hardware in the photo */}
             <figcaption
-              className="rise absolute top-[69%] right-[60%] hidden items-center gap-3 whitespace-nowrap md:flex"
+              className="rise absolute top-[69%] left-[-15.24%] hidden items-center gap-3 whitespace-nowrap md:flex"
               style={{ animationDelay: '900ms' }}
             >
               <span className="text-right">
@@ -78,18 +77,18 @@ export default function Hero() {
                 </span>
               </span>
               <span className="flex items-center">
-                <span className="h-px w-12 bg-ink/20 lg:w-16" />
-                <span className="size-1.5 rounded-full bg-paddle" />
+                <span className="h-px w-[88px] bg-ink/20 lg:w-[104px]" />
+                <span className="size-2 shrink-0 rounded-full bg-paddle ring-[1.5px] ring-white shadow-xs" />
               </span>
             </figcaption>
 
             <figcaption
-              className="rise absolute top-[24%] left-[95%] hidden items-center gap-3 whitespace-nowrap md:flex"
+              className="rise absolute top-[25%] left-1/2 hidden items-center gap-3 whitespace-nowrap md:flex"
               style={{ animationDelay: '1000ms' }}
             >
               <span className="flex items-center">
-                <span className="size-1.5 rounded-full bg-paddle" />
-                <span className="h-px w-12 bg-ink/20 lg:w-16" />
+                <span className="size-2 shrink-0 rounded-full bg-paddle ring-[1.5px] ring-white shadow-xs" />
+                <span className="h-px w-44 bg-ink/20 lg:w-52" />
               </span>
               <span>
                 <span className="block font-display text-[13px] font-bold tracking-[-0.01em] text-ink">

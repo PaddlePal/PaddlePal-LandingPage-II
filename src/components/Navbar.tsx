@@ -28,8 +28,7 @@ export default function Navbar() {
             height={36}
           />
           <span className="font-display text-[17px] tracking-[-0.02em] whitespace-nowrap sm:text-lg">
-            <span className="font-light text-ink-soft">Paddle</span>
-            <span className="font-extrabold text-ink">Pal</span>
+            <span className="font-light text-ink-soft">PaddlePal</span>
           </span>
         </a>
 
@@ -44,9 +43,8 @@ export default function Navbar() {
               >
                 {label}
                 <span
-                  className={`absolute inset-x-4 -bottom-px h-px origin-center bg-ink transition-transform duration-300 ${
-                    i === 0 ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
-                  }`}
+                  className={`absolute inset-x-4 -bottom-px h-px origin-center bg-ink transition-transform duration-300 ${i === 0 ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                    }`}
                 />
               </a>
             </li>
