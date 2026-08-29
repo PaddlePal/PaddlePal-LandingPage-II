@@ -38,8 +38,8 @@ function Card({
   return (
     <article
       className={`reveal flex flex-col rounded-2xl border border-hairline p-6 shadow-[0_1px_2px_rgba(11,18,16,0.04),0_18px_40px_-30px_rgba(11,18,16,0.35)] sm:p-7 ${featured
-          ? 'bg-gradient-to-b from-paddle/[0.045] to-white'
-          : 'bg-white'
+        ? 'bg-gradient-to-b from-paddle/[0.045] to-white'
+        : 'bg-white'
         } ${className}`}
       data-visible={visible}
       style={{ transitionDelay: `${delay}ms` }}
@@ -57,8 +57,8 @@ function Card({
       <div className="mt-auto pt-9">
         <h3
           className={`font-display tracking-[-0.025em] text-ink ${featured
-              ? 'text-[22px] font-semibold sm:text-[26px]'
-              : 'text-[19px] font-medium sm:text-[20px]'
+            ? 'text-[22px] font-semibold sm:text-[26px]'
+            : 'text-[19px] font-medium sm:text-[20px]'
             }`}
         >
           {title}
