@@ -65,7 +65,7 @@ export default function Hero() {
 
             {/* Callouts anchored to the real hardware in the photo */}
             <figcaption
-              className="rise absolute top-[69%] left-[-15.24%] hidden items-center gap-3 whitespace-nowrap md:flex"
+              className="rise absolute top-[69%] left-[-21.5%] hidden items-center gap-3 whitespace-nowrap md:flex"
               style={{ animationDelay: '900ms' }}
             >
               <span className="text-right">
