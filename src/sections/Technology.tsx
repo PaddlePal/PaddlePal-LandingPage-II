@@ -1,4 +1,4 @@
-import paddle from '../assets/technology-cutout.webp'
+import paddle from '../assets/technology-cutout-v2.webp'
 import { useInView } from '../hooks/useInView'
 
 /**
@@ -10,7 +10,18 @@ import { useInView } from '../hooks/useInView'
  * percentages — it runs past 0–100 because the image is a 3.2:1 letterbox and
  * three stacked labels are taller than it is.
  */
-const parts = [
+type Part = {
+  side: 'left' | 'right' | 'bottom'
+  title: string
+  body: string
+  anchor: { x: number; y: number }
+  /** Vertical position of the label's title line, in image percentages. */
+  callout: number
+  /** Bottom callouts only: place the label at this x instead of the anchor's. */
+  labelX?: number
+}
+
+const parts: Part[] = [
   {
     side: 'left',
     title: 'Blue vinyl face',
@@ -36,8 +47,18 @@ const parts = [
     side: 'right',
     title: 'Sensor PCB',
     body: 'The custom sensor circuit board sits at the throat, taking in all the FSR leads. This PCB connects groups of FSRs in parallel, creating zones. Each zone is routed through a voltage divider passes analog signals down into the handle.',
-    anchor: { x: 50.5, y: 49.0 },
+    anchor: { x: 53, y: 47.0 },
     callout: -14,
+  },
+  {
+    side: 'bottom',
+    title: 'Vibration Motor',
+    body: 'Integrated vibration motor provides immediate real-time feedback to the player everytime the sweetspot (zone1) is hit during play.',
+    anchor: { x: 67.4, y: 49.0 },
+    callout: 108,
+    // label pulled left of the anchor; leader runs as a single straight
+    // diagonal, matching the honeycomb callout
+    labelX: 43,
   },
   {
     side: 'right',
@@ -50,10 +71,11 @@ const parts = [
     side: 'bottom',
     title: 'Handle housing',
     body: 'This custom handle was modled and 3D printed out of polypropylene. It is designed to carry the electronics without shifting the paddle’s balance point.',
-    anchor: { x: 67.4, y: 57.9 },
+    // centre of the handle housing; label sits straight below it
+    anchor: { x: 77.6, y: 58.0 },
     callout: 108,
   },
-] as const
+]
 
 /* The leader-line overlay spans 31% past each edge of the image, so the SVG
    viewBox is 162 wide with the image occupying 31→131. */
@@ -91,7 +113,7 @@ export default function Technology() {
         >
           <img
             src={paddle}
-            alt="Cutaway of the PaddlePal paddle showing the vinyl face, FSR sensor grid, honeycomb core, sensor PCB, handle housing and onboard microcontroller"
+            alt="Cutaway of the PaddlePal paddle showing the vinyl face, FSR sensor grid, honeycomb core, sensor PCB, vibration motor, handle housing and onboard microcontroller"
             width={2445}
             height={764}
             className="w-full"
@@ -104,18 +126,21 @@ export default function Technology() {
             aria-hidden="true"
             className="pointer-events-none absolute top-0 -left-[31%] h-full w-[162%] overflow-visible"
           >
-            {parts.map(({ side, anchor, callout, title }) => {
+            {parts.map((part) => {
+              const { side, anchor, callout, title } = part
+              const labelX = part.labelX ?? anchor.x
               const d =
                 side === 'left'
                   ? `M${PAD + anchor.x} ${anchor.y} L${LEFT_END} ${callout}`
                   : side === 'right'
-                  ? `M${PAD + anchor.x} ${anchor.y} L${RIGHT_END} ${callout}`
-                  : `M${PAD + anchor.x} ${anchor.y} L${PAD + anchor.x} ${callout}`
+                    ? `M${PAD + anchor.x} ${anchor.y} L${RIGHT_END} ${callout}`
+                    : `M${PAD + anchor.x} ${anchor.y} L${PAD + labelX} ${callout}`
 
               return (
                 <path
                   key={title}
                   d={d}
+                  fill="none"
                   className="stroke-ink/25"
                   strokeWidth="1"
                   vectorEffect="non-scaling-stroke"
@@ -135,13 +160,15 @@ export default function Technology() {
           ))}
 
           {/* callouts */}
-          {parts.map(({ side, title, body, callout, anchor }) => {
+          {parts.map((part) => {
+            const { side, title, body, callout, anchor } = part
             if (side === 'bottom') {
+              const labelX = part.labelX ?? anchor.x
               return (
                 <div
                   key={title}
-                  className="absolute w-[28%] -translate-x-1/2 text-center"
-                  style={{ left: `${anchor.x}%`, top: `${callout + 4}%` }}
+                  className="absolute w-[26%] -translate-x-1/2 text-center"
+                  style={{ left: `${labelX}%`, top: `${callout + 4}%` }}
                 >
                   <p className="font-display text-[15px] font-semibold tracking-[-0.02em] text-ink">
                     {title}
@@ -156,11 +183,10 @@ export default function Technology() {
             return (
               <div
                 key={title}
-                className={`absolute w-[26%] -translate-y-1/2 ${
-                  side === 'left'
-                    ? 'right-full mr-[3%] text-right'
-                    : 'left-full ml-[3%]'
-                }`}
+                className={`absolute w-[26%] -translate-y-[11px] ${side === 'left'
+                  ? 'right-full mr-[3%] text-right'
+                  : 'left-full ml-[3%]'
+                  }`}
                 style={{ top: `${callout}%` }}
               >
                 <p className="font-display text-[15px] font-semibold tracking-[-0.02em] text-ink">
