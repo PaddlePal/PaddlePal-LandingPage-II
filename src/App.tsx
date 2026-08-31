@@ -1,3 +1,4 @@
+import AppSection from './sections/AppSection'
 import Features from './sections/Features'
 import Hero from './sections/Hero'
 import Technology from './sections/Technology'
@@ -8,6 +9,7 @@ function App() {
       <Hero />
       <Features />
       <Technology />
+      <AppSection />
     </main>
   )
 }

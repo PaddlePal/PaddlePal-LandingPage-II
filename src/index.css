@@ -132,6 +132,22 @@ body {
     linear-gradient(to bottom, #f3f5f4 0%, #ffffff 34%, #ffffff 100%);
 }
 
+/* ---- App section -------------------------------------------------------- */
+
+.app-wash {
+  background:
+    radial-gradient(38% 32% at 82% 6%, rgba(2, 101, 197, 0.06), transparent 72%),
+    radial-gradient(42% 34% at 8% 84%, rgba(22, 160, 165, 0.05), transparent 74%),
+    linear-gradient(to bottom, #ffffff 0%, #f6f7f7 58%, #f2f4f3 100%);
+}
+
+/* The mockup render is cropped part-way down the phones; fading the last of it
+   turns that hard cut into the page rather than a visible edge. */
+.app-mockup-fade {
+  -webkit-mask-image: linear-gradient(to bottom, #000 84%, transparent 99%);
+  mask-image: linear-gradient(to bottom, #000 84%, transparent 99%);
+}
+
 /* Scroll-triggered counterpart to `.rise` — driven by data-visible from
    useInView, so below-the-fold content animates when it is reached. */
 .reveal {
