@@ -3,9 +3,9 @@ import logo from '../assets/paddlepal-mark.png'
 
 const links = [
   { label: 'Home', href: '#home' },
-  { label: 'Features', href: '#features' },
   { label: 'Technology', href: '#technology' },
   { label: 'App', href: '#app' },
+  { label: 'Features', href: '#features' },
   { label: 'Team', href: '#team' },
 ]
 
