@@ -1,6 +1,7 @@
 import AppSection from './sections/AppSection'
 import Demo from './sections/Demo'
 import Features from './sections/Features'
+import Footer from './components/Footer'
 import Hero from './sections/Hero'
 import Software from './sections/Software'
 import Team from './sections/Team'
@@ -8,15 +9,18 @@ import Technology from './sections/Technology'
 
 function App() {
   return (
-    <main>
-      <Hero />
-      <Technology />
-      <AppSection />
-      <Software />
-      <Features />
-      <Team />
-      <Demo />
-    </main>
+    <>
+      <main>
+        <Hero />
+        <Technology />
+        <AppSection />
+        <Software />
+        <Features />
+        <Team />
+        <Demo />
+      </main>
+      <Footer />
+    </>
   )
 }
 
