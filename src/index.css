@@ -158,6 +158,12 @@ body {
   mask-image: linear-gradient(to bottom, #000 84%, transparent 99%);
 }
 
+/* ---- Team section ------------------------------------------------------- */
+
+.team-wash {
+  background: linear-gradient(to bottom, #ffffff 0%, #f8faf9 40%, #f5f7f6 100%);
+}
+
 /* Scroll-triggered counterpart to `.rise` — driven by data-visible from
    useInView, so below-the-fold content animates when it is reached. */
 .reveal {

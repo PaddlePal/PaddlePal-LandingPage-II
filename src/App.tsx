@@ -2,6 +2,7 @@ import AppSection from './sections/AppSection'
 import Features from './sections/Features'
 import Hero from './sections/Hero'
 import Software from './sections/Software'
+import Team from './sections/Team'
 import Technology from './sections/Technology'
 
 function App() {
@@ -12,6 +13,8 @@ function App() {
       <AppSection />
       <Software />
       <Features />
+      <Team />
+
 
     </main>
   )

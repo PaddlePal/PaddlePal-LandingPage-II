@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import logo from '../assets/paddlepal-mark.png'
+import iconGithub from '../assets/icon-github.webp'
 
 const links = [
   { label: 'Home', href: '#home' },
@@ -59,9 +60,8 @@ export default function Navbar() {
           >
             View demo
           </a>
-
           <a
-            href="#contact"
+            href="#team"
             className="inline-flex items-center gap-1.5 rounded-full bg-ink px-4 py-2 text-[13px] font-medium text-white transition-[transform,background-color] duration-200 hover:-translate-y-px hover:bg-brand sm:px-5 sm:py-2.5"
           >
             Contact
@@ -79,6 +79,16 @@ export default function Navbar() {
                 strokeLinejoin="round"
               />
             </svg>
+          </a>
+
+          <a
+            href="https://github.com/PaddlePal?view_as=public"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="PaddlePal on GitHub"
+            className="hidden size-9 shrink-0 items-center justify-center rounded-full transition-transform duration-200 hover:-translate-y-px sm:inline-flex"
+          >
+            <img src={iconGithub} alt="" className="size-full" />
           </a>
 
           <button
