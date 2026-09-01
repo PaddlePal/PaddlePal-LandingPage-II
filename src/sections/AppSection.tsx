@@ -5,19 +5,19 @@ import { useInView } from '../hooks/useInView'
 const details = [
   {
     title: 'Pair and play',
-    body: 'The app finds the paddle on wake and connects without a setup flow. [Template description — replace with final copy]',
+    body: 'The app finds the paddle on wake, connects and reconnects automatically.',
   },
   {
     title: 'Live zone hits',
-    body: 'Contact zones light up on the paddle map as you play. [Template description — replace with final copy]',
+    body: 'Contact zones light up on the paddle map in the Live tab in real time as you play.',
   },
   {
     title: 'Session breakdown',
-    body: 'Shot count, average power and per-zone totals for every session. [Template description — replace with final copy]',
+    body: 'Shot count, average power, per-zone and shot type totals for every session.',
   },
   {
     title: 'Full history',
-    body: 'Every session is kept, so progress is visible across weeks. [Template description — replace with final copy]',
+    body: 'Every session is timestamped and stored, so progress is visible across weeks.',
   },
 ]
 
@@ -28,7 +28,7 @@ export default function AppSection() {
     <section
       id="app"
       ref={ref}
-      className="app-wash relative isolate overflow-hidden py-24 sm:py-28 lg:py-36"
+      className="app-wash relative isolate overflow-hidden pt-16 pb-24 sm:pt-20 sm:pb-28 lg:pt-24 lg:pb-36"
     >
       <div className="relative z-10 mx-auto max-w-[1500px] px-6 sm:px-10">
         {/* --- header ---------------------------------------------------- */}
