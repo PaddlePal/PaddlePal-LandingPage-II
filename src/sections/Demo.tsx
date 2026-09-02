@@ -32,7 +32,7 @@ export default function Demo() {
         <div
           className="reveal relative mx-auto mt-14 w-full max-w-[860px] lg:mt-16"
           data-visible={inView}
-          style={{ transitionDelay: '140ms' }}
+          style={{ transitionDelay: '160ms' }}
         >
           {/* percentages below are measured against macbook-mockup.webp's own
               cut-out screen, so this stays aligned at any width */}
@@ -66,7 +66,7 @@ export default function Demo() {
           rel="noreferrer"
           className="reveal group mx-auto mt-8 flex w-fit items-center gap-1.5 text-[13px] font-medium text-ink-soft transition-colors hover:text-ink"
           data-visible={inView}
-          style={{ transitionDelay: '200ms' }}
+          style={{ transitionDelay: '230ms' }}
         >
           Watch on YouTube
           <svg

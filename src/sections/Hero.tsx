@@ -24,7 +24,7 @@ export default function Hero() {
       <div className="pointer-events-none absolute inset-x-0 top-[28%] z-10 md:top-[48%] -translate-y-1/2 select-none">
         <h1
           className="rise text-center font-display text-[min(19vw,16.5rem)] leading-[0.82] font-semibold tracking-[-0.055em] text-ghost"
-          style={{ animationDelay: '80ms' }}
+          style={{ animationDelay: '92ms' }}
         >
           PaddlePal
         </h1>
@@ -36,14 +36,14 @@ export default function Hero() {
         {/* --- copy ------------------------------------------------------ */}
         <p
           className="rise font-display text-[clamp(1.05rem,2.4vw,1.75rem)] leading-tight font-medium tracking-[-0.03em] text-ink-soft"
-          style={{ animationDelay: '200ms' }}
+          style={{ animationDelay: '230ms' }}
         >
           Smart Pickleball Analytics
         </p>
 
         <p
           className="rise mt-3 max-w-[40ch] text-[13px] leading-relaxed text-ink-faint"
-          style={{ animationDelay: '300ms' }}
+          style={{ animationDelay: '345ms' }}
         >
           Every swing, shot and impact measured
         </p>
@@ -53,7 +53,7 @@ export default function Hero() {
         <div className="relative mt-6 min-h-[200px] w-full flex-1">
           <figure
             className="rise-paddle absolute bottom-[-13svh] left-1/2 aspect-[682/1432] h-[calc(100%+13svh)] max-h-[820px] -translate-x-1/2"
-            style={{ animationDelay: '180ms' }}
+            style={{ animationDelay: '210ms' }}
           >
             <img
               src={paddle}
@@ -66,7 +66,7 @@ export default function Hero() {
             {/* Callouts anchored to the real hardware in the photo */}
             <figcaption
               className="rise absolute top-[69%] left-[-21.5%] hidden items-center gap-3 whitespace-nowrap md:flex"
-              style={{ animationDelay: '900ms' }}
+              style={{ animationDelay: '1035ms' }}
             >
               <span className="text-right">
                 <span className="block font-display text-[13px] font-bold tracking-[-0.01em] text-ink">
@@ -84,7 +84,7 @@ export default function Hero() {
 
             <figcaption
               className="rise absolute top-[25%] left-1/2 hidden items-center gap-3 whitespace-nowrap md:flex"
-              style={{ animationDelay: '1000ms' }}
+              style={{ animationDelay: '1150ms' }}
             >
               <span className="flex items-center">
                 <span className="size-2 shrink-0 rounded-full bg-paddle ring-[1.5px] ring-white shadow-xs" />
@@ -107,7 +107,7 @@ export default function Hero() {
       <div className="pointer-events-none relative z-30 mx-auto flex w-full max-w-[1440px] items-end justify-between px-6 pb-6 sm:px-10">
         <dl
           className="rise hidden items-center gap-6 sm:flex"
-          style={{ animationDelay: '650ms' }}
+          style={{ animationDelay: '750ms' }}
         >
           {specs.map(([value, label]) => (
             <div key={label} className="text-right leading-tight">

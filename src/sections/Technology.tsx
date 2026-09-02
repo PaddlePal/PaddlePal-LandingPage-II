@@ -99,7 +99,7 @@ export default function Technology() {
           <h2
             className="reveal font-display text-[clamp(2rem,3.5vw,3rem)] leading-[1.08] font-medium tracking-[-0.04em] text-balance text-ink"
             data-visible={inView}
-            style={{ transitionDelay: '80ms' }}
+            style={{ transitionDelay: '92ms' }}
           >
             Built into the paddle,
             <br className="hidden sm:block" /> not bolted onto it.
@@ -110,7 +110,7 @@ export default function Technology() {
         <div
           className="reveal relative mx-auto mt-28 mb-36 hidden w-[62%] xl:block"
           data-visible={inView}
-          style={{ transitionDelay: '240ms' }}
+          style={{ transitionDelay: '275ms' }}
         >
           <img
             src={paddle}
@@ -138,14 +138,26 @@ export default function Technology() {
                     : `M${PAD + anchor.x} ${anchor.y} L${PAD + labelX} ${callout}`
 
               return (
-                <path
-                  key={title}
-                  d={d}
-                  fill="none"
-                  className="stroke-ink/25"
-                  strokeWidth="1"
-                  vectorEffect="non-scaling-stroke"
-                />
+                <g key={title}>
+                  {/* White contrast underlay so line remains clearly visible across dark paddle features */}
+                  <path
+                    d={d}
+                    fill="none"
+                    stroke="white"
+                    strokeWidth="3.5"
+                    strokeOpacity="0.9"
+                    vectorEffect="non-scaling-stroke"
+                    strokeLinecap="round"
+                  />
+                  <path
+                    d={d}
+                    fill="none"
+                    className="stroke-ink/55"
+                    strokeWidth="1.5"
+                    vectorEffect="non-scaling-stroke"
+                    strokeLinecap="round"
+                  />
+                </g>
               )
             })}
           </svg>
@@ -206,7 +218,7 @@ export default function Technology() {
           <div
             className="reveal -mx-6 mt-12 overflow-x-auto px-6 sm:-mx-10 sm:px-10"
             data-visible={inView}
-            style={{ transitionDelay: '240ms' }}
+            style={{ transitionDelay: '275ms' }}
           >
             <div className="relative w-[560px] max-w-none sm:w-full">
               <img
@@ -233,7 +245,7 @@ export default function Technology() {
                 key={title}
                 className="reveal"
                 data-visible={inView}
-                style={{ transitionDelay: `${300 + i * 50}ms` }}
+                style={{ transitionDelay: `${345 + i * 60}ms` }}
               >
                 <dt className="font-display text-[15px] font-semibold tracking-[-0.02em] text-ink">
                   {title}

@@ -35,7 +35,7 @@ export default function AppSection() {
         <div className="grid grid-cols-1 gap-x-6 gap-y-8 lg:grid-cols-12">
           <h2
             className="reveal font-display text-[clamp(1.75rem,3.5vw,3rem)] leading-[1.08] font-medium tracking-[-0.04em] text-balance text-ink text-center lg:col-span-8 lg:col-start-3" data-visible={inView}
-            style={{ transitionDelay: '80ms' }}
+            style={{ transitionDelay: '92ms' }}
           >
             The whole session,
             <br className="hidden sm:block" /> waiting when you walk off.
@@ -46,7 +46,7 @@ export default function AppSection() {
         <div
           className="reveal -mx-6 mt-16 overflow-x-auto px-6 sm:mx-auto sm:w-full sm:max-w-[1120px] sm:overflow-visible sm:px-0 lg:mt-20"
           data-visible={inView}
-          style={{ transitionDelay: '240ms' }}
+          style={{ transitionDelay: '275ms' }}
         >
           <img
             src={appmockup}
@@ -66,7 +66,7 @@ export default function AppSection() {
               key={title}
               className="reveal"
               data-visible={inView}
-              style={{ transitionDelay: `${320 + i * 70}ms` }}
+              style={{ transitionDelay: `${370 + i * 80}ms` }}
             >
               <p className="font-display text-[15px] font-semibold tracking-[-0.02em] text-ink">
                 {title}

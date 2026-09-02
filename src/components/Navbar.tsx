@@ -56,7 +56,7 @@ export default function Navbar() {
         <div className="flex shrink-0 items-center gap-2 justify-self-end col-start-3 sm:gap-3">
           <a
             href="#demo"
-            className="hidden items-center rounded-full border border-hairline bg-white/80 px-4 py-2 text-[13px] font-medium text-ink shadow-[0_1px_2px_rgba(11,18,16,0.05)] backdrop-blur-md transition-[transform,border-color] duration-200 hover:-translate-y-px hover:border-ink/25 sm:inline-flex"
+            className="hidden items-center rounded-full border border-hairline bg-white/80 px-4 py-2 text-[13px] font-medium text-ink shadow-[0_1px_2px_rgba(11,18,16,0.05)] backdrop-blur-md transition-[transform,border-color] duration-200 hover:-translate-y-px hover:border-ink/25 sm:inline-flex sm:px-5 sm:py-2.5"
           >
             View demo
           </a>

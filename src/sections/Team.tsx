@@ -140,7 +140,7 @@ export default function Team() {
         <div
           className="reveal mx-auto mt-6 h-[3px] w-16 rounded-full bg-ink/25"
           data-visible={inView}
-          style={{ transitionDelay: '60ms' }}
+          style={{ transitionDelay: '70ms' }}
         />
 
         <div className="mt-16 grid grid-cols-1 gap-6 lg:mt-20 lg:grid-cols-5">
@@ -154,7 +154,7 @@ export default function Team() {
                   : 'max-w-[380px]'
                   }`}
                 data-visible={inView}
-                style={{ transitionDelay: `${140 + i * 90}ms` }}
+                style={{ transitionDelay: `${160 + i * 105}ms` }}
               >
                 {/* people: photo, name and that person's own links */}
                 <div

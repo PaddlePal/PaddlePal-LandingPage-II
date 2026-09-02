@@ -55,12 +55,7 @@ function Card({
       </div>
 
       <div className="mt-auto pt-9">
-        <h3
-          className={`font-display tracking-[-0.025em] text-ink ${featured
-            ? 'text-[22px] font-semibold sm:text-[26px]'
-            : 'text-[19px] font-medium sm:text-[20px]'
-            }`}
-        >
+        <h3 className="font-display text-[19px] font-medium tracking-[-0.025em] text-ink sm:text-[20px]">
           {title}
         </h3>
         <p className="mt-5 text-[11.5px] font-medium text-paddle">{lead}</p>
@@ -95,7 +90,7 @@ export default function Features() {
           <h2
             className="reveal font-display text-[clamp(1.75rem,3.5vw,3rem)] leading-[1.08] font-medium tracking-[-0.04em] text-balance text-ink lg:col-span-9 lg:col-start-4"
             data-visible={inView}
-            style={{ transitionDelay: '80ms' }}
+            style={{ transitionDelay: '92ms' }}
           >
             Sense, classify, improve:
             <br className="hidden sm:block" /> real coaching from the paddle in
@@ -108,7 +103,7 @@ export default function Features() {
           <div
             className="reveal self-start md:col-span-2 lg:col-span-3 lg:row-start-1 lg:pr-6"
             data-visible={inView}
-            style={{ transitionDelay: '140ms' }}
+            style={{ transitionDelay: '160ms' }}
           >
             <p className="text-[13px] leading-[1.7] text-ink-soft">
               Ready to stop guessing at your game?
@@ -128,7 +123,7 @@ export default function Features() {
 
           <Card
             visible={inView}
-            delay={200}
+            delay={230}
             featured
             title="Shot Classification"
             lead="The paddle knows a drive from a dink."
@@ -140,7 +135,7 @@ export default function Features() {
 
           <Card
             visible={inView}
-            delay={260}
+            delay={300}
             title="Impact Zone Detection"
             lead="Know if you hit the 'sweet spot'."
             body="Force sensor matrix resolve every hit to a region (zone1-4). Real-time tactile feedback for every zone1 (sweetspot) hit"
@@ -150,7 +145,7 @@ export default function Features() {
 
           <Card
             visible={inView}
-            delay={320}
+            delay={370}
             title="Live Play View"
             lead="Third party viewing while you play."
             body="Shots appear on your phone as they happen. A coach or teammate can provide feedback about your play, while you play."
@@ -160,7 +155,7 @@ export default function Features() {
 
           <Card
             visible={inView}
-            delay={380}
+            delay={440}
             title="Session Analytics"
             lead="A coach in your pocket."
             body="Power trends, shots per zone and shot-type breakdowns stored and displayed for each session, turning a pile of individual hits into a picture of what is actually happening."
@@ -170,7 +165,7 @@ export default function Features() {
 
           <Card
             visible={inView}
-            delay={440}
+            delay={510}
             title="Reliable Connection"
             lead="Pick it up and play."
             body="The paddle pairs on wake and rebuilds the link by itself if it drops mid-session. No settings menu, no re-pairing ritual before you can start."

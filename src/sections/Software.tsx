@@ -41,7 +41,7 @@ export default function Software() {
         <h2
           className="reveal mx-auto max-w-[20ch] text-center font-display text-[clamp(1.6rem,3.2vw,2.75rem)] leading-[1.08] font-medium tracking-[-0.04em] text-balance text-ink"
           data-visible={inView}
-          style={{ transitionDelay: '60ms' }}
+          style={{ transitionDelay: '70ms' }}
         >
           From swing to insight in three stages.
         </h2>
@@ -53,7 +53,7 @@ export default function Software() {
               className={`reveal px-5 py-2 text-center lg:px-8 ${i > 0 ? 'border-t border-hairline pt-12 sm:border-t-0 sm:border-l sm:pt-2' : ''
                 }`}
               data-visible={inView}
-              style={{ transitionDelay: `${140 + i * 90}ms` }}
+              style={{ transitionDelay: `${160 + i * 105}ms` }}
             >
               <div className="flex h-[212px] items-end justify-center lg:h-[236px]">
                 <img
