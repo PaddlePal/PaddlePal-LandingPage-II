@@ -228,13 +228,15 @@ export default function Technology() {
                 height={764}
                 className="w-full"
               />
-              {parts.map(({ title, anchor }) => (
+              {parts.map(({ title, anchor }, i) => (
                 <span
                   key={title}
                   aria-hidden="true"
-                  className="absolute size-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-paddle ring-2 ring-white"
+                  className="absolute flex size-[19px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-paddle text-[10px] leading-none font-bold text-white ring-2 ring-white"
                   style={{ left: `${anchor.x}%`, top: `${anchor.y}%` }}
-                />
+                >
+                  {i + 1}
+                </span>
               ))}
             </div>
           </div>
@@ -247,7 +249,10 @@ export default function Technology() {
                 data-visible={inView}
                 style={{ transitionDelay: `${345 + i * 60}ms` }}
               >
-                <dt className="font-display text-[15px] font-semibold tracking-[-0.02em] text-ink">
+                <dt className="flex items-center gap-2.5 font-display text-[15px] font-semibold tracking-[-0.02em] text-ink">
+                  <span className="flex size-[19px] shrink-0 items-center justify-center rounded-full bg-paddle text-[10px] leading-none font-bold text-white">
+                    {i + 1}
+                  </span>
                   {title}
                 </dt>
                 <dd className="mt-1.5 text-[12.5px] leading-[1.65] text-ink-faint">
